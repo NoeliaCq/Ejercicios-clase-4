@@ -7,15 +7,15 @@ var $miami = document.querySelector("#miami_img");
 var $fort = document.querySelector("#fort_img");
 
 $button1.addEventListener("click", function() {
-    $money.classList.remove("oculto")
+    $money.classList.toggle("oculto")
 })
 
 $button2.addEventListener("click", function() {
-    $miami.classList.remove("oculto")
+    $miami.classList.toggle("oculto")
 })
 
 $button3.addEventListener("click", function() {
-    $fort.classList.remove("oculto")
+    $fort.classList.toggle("oculto")
 })
 
 var imagenes = document.querySelectorAll("img");
