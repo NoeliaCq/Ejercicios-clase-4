@@ -1,14 +1,19 @@
 
-var $img = document.querySelector("img");
-var $body = document.body;
+var $img = document.querySelector(".img");
 
-//cambia el valor del atributo pero el gif no se mueve
-$body.addEventListener("mousemove", function(info) {
-    console.log(info.clientX);
-    console.log(info.clientY);
-    $img.setAttribute("position", "absolute");
-    $img.style.zIndex = 1000;
-    $img.setAttribute("top", info.clientY);
-    $img.setAttribute("left", info.clientX);
-    
+function changePosition(img, top, left) {
+    img.style.top = top + 'px';
+    img.style.left = left + 'px';
+}
+
+//la imagen te sigue si moves el mouse
+document.body.addEventListener("mousemove", function(info) {
+    changePosition($img, info.clientY, info.clientX);   
 })
+
+//la imagen te sigue al lugar del body en el que hagas click
+/*document.body.addEventListener("mousedown", function(info) {
+    changePosition($img, info.clientY, info.clientX);   
+})*/
+
+
